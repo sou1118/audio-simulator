@@ -1,36 +1,144 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 音のデジタル化シミュレーター
 
-## Getting Started
+音声のデジタル化プロセス（標本化・量子化・符号化）を視覚的に学習できる教育用Webアプリケーションです。
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-14+-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3+-blue)
+
+## 🎯 概要
+
+音声がどのようにデジタル化されるかを直感的に理解できるように設計された高等学校の情報Ⅰ用の教育ツールです。
+アナログ音声からデジタル音声への変換プロセスを、リアルタイムで波形を見ながら学習できます。
+
+### 主な機能
+
+- 🎵 **音声ファイルの読み込み** - WAV、MP3等の音声ファイルをアップロード
+- 🎛️ **プリセット音源** - 正弦波、音声サンプル、音楽サンプル
+- 📊 **リアルタイム波形表示** - 元の波形と処理後の波形を並行表示
+- ⚙️ **パラメータ調整** - サンプリングレートとビット深度の変更
+- 🔍 **詳細可視化** - サンプリングポイント、量子化レベル、バイナリデータの表示
+- 🎧 **音声比較再生** - 元の音と処理後の音の聞き比べ
+- 📈 **ズーム・パン機能** - 波形の詳細観察
+
+## 🎓 学習内容
+
+### デジタル化の3ステップ
+
+1. **標本化（サンプリング）** - 連続的な音を一定間隔で測定
+2. **量子化** - 測定値を限られた段階に丸める
+3. **符号化** - デジタル値を2進数で表現
+
+### 体験できる現象
+
+- **エイリアシング** - サンプリングレートが低い時の音質劣化
+- **量子化ノイズ** - ビット数が少ない時のざらつき
+- **データ圧縮** - パラメータによるファイルサイズの変化
+
+## 🚀 技術スタック
+
+- **フレームワーク**: Next.js 14+
+- **言語**: TypeScript
+- **スタイリング**: Tailwind CSS
+- **UIコンポーネント**: shadcn/ui
+- **音声処理**: Web Audio API
+- **アイコン**: Lucide React
+
+## 📁 プロジェクト構造
+
+`ARCHITECTURE.md` を参照してください。
+
+## 🛠️ セットアップ
+
+### 前提条件
+
+- Node.js 18.0以上
+- npm、yarn、またはbun
+
+### インストール
+
+1. **リポジトリのクローン**
+
+```bash
+git clone https://github.com/sou1118/audio-simulator.git
+cd audio-simulator
+```
+
+2. **依存関係のインストール**
+
+```bash
+npm install
+# または
+yarn install
+# または
+bun install
+```
+
+3. **開発サーバーの起動**
 
 ```bash
 npm run dev
-# or
+# または
 yarn dev
-# or
-pnpm dev
-# or
+# または
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **ブラウザでアクセス**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎮 使用方法
 
-## Learn More
+### 基本的な使い方
 
-To learn more about Next.js, take a look at the following resources:
+1. **音声の選択**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - プリセット音源を選択するか、音声ファイルをアップロード
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **パラメータの調整**
 
-## Deploy on Vercel
+   - サンプリングレート: 1,000Hz～48,000Hz
+   - ビット深度: 1bit～16bit
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **波形の観察**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   - 元の波形と処理後の波形を比較
+   - ズーム・パン機能で詳細を確認
+
+4. **音声の聞き比べ**
+   - 元の音と処理後の音を再生して違いを体感
+
+### 高度な機能
+
+- **サンプリングポイント表示**: 個々の標本点を可視化
+- **量子化レベル表示**: 量子化の段階を波形上に表示
+- **バイナリデータ表示**: デジタル化されたデータの2進数表現
+- **詳細情報**: データレート、符号化情報の表示
+
+## 📚 教育での活用
+
+### 対象
+
+- 高校の情報Ⅰの授業
+
+### 学習ポイント
+
+- **ナイキスト定理**: サンプリングレートと再現可能な周波数の関係
+- **量子化ノイズ**: ビット数と音質の関係
+- **データ圧縮**: パラメータとファイルサイズの関係
+- **CD音質**: 44.1kHz/16bitの意味
+
+## 🐛 既知の問題
+
+- Safari での一部音声ファイルの読み込み問題
+- 大きなファイル（10MB以上）での動作が重い場合がある
+- モバイルデバイスでの一部UIの表示問題
+
+## 📄 ライセンス
+
+このプロジェクトはApache License Version 2.0の下で公開されています。
+
+ただし、UIコンポーネントやアイコンはそれぞれのライセンスに従います。
