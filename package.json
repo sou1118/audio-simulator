@@ -39,7 +39,7 @@
 		"eslint": "9.30.1",
 		"eslint-config-next": "15.3.5",
 		"prettier": "3.5.3",
-		"prettier-plugin-toml": "2.0.5",
+		"prettier-plugin-toml": "2.0.6",
 		"tailwindcss": "4.1.11",
 		"tw-animate-css": "1.3.5",
 		"typescript": "5.8.3"
